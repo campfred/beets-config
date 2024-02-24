@@ -1,0 +1,126 @@
+directory: D:\Beets\Musique
+library: D:\Beets\Bibliothèque.db
+
+ui:
+  terminal_width: 120
+  length_diff_thresh: 3
+
+import:
+  languages:
+    - fr
+    - en
+  bell: true
+  # group_albums: true
+  write: true
+  # move: true
+  move: false
+  falsene_rec_action: skip
+  log: D:\Musique.beets.log
+
+plugins:
+  - info
+  - inline
+  - web
+  - fuzzy
+  - duplicates
+  - unimported
+  - importadded
+  - edit
+  - chroma # pyacoustid
+  - convert
+  - replaygain
+  # - fromfilename
+  - beatport4
+  - spotify
+  - lastgenre
+  # - bpmanalyser
+  - lyrics
+  - embedart
+  - fetchart
+
+item_fields:
+  disc_and_track: u'%02i-%02i' % (disc, track) if disctotal > 1 else u'%02i' % (track)
+  label_and_catalog: (label + " ~ " + catalognum) if catalognum else label
+
+paths:
+  default: $albumartist/$album%aunique{} ($label_and_catalog)/$disc_and_track $title
+
+edit:
+  itemfields:
+    - disc
+    - track
+    - title
+    - artist
+    - album
+    - albumartist
+    - label
+    - catalognum
+    - genre
+    - comments
+    - bpm
+    - comp
+  albumfields:
+    - album
+    - albumartist
+    - label
+    - catalognum
+    - genre
+    - comments
+    - comp
+
+rewrite:
+  artist Muzzy: MUZZ
+
+convert:
+  auto: false
+  copy_album_art: true
+  embed: true
+  max_bitrate: falsene
+  never_convert_lossy_files: true
+  # delete_originals: true
+  delete_originals: false
+  format: flac
+  # format: aiff
+  # formats:
+  #   aiff:
+  #     command: ffmpeg -i $source -write_id3v2 1 -c:v copy $dest
+  #     extension: aiff
+
+replaygain:
+  backend: ffmpeg
+  # backend: gstreamer
+
+lastgenre:
+  count: 3
+  source: track
+
+bpmanalyser:
+  auto: true
+  write: true
+
+embedart:
+  maxwidth: 1400
+  remove_art_file: false
+
+fetchart:
+  quality: 100
+  high_resolution: true
+
+musicbrainz:
+  source_weight: 0.4
+  extra_tags: [catalognum, label, year]
+  external_ids:
+    discogs: true
+    spotify: true
+    bandcamp: true
+    beatport: true
+    tidal: true
+
+beatport4:
+  source_weight: 0.7
+  art: true
+  art_overwrite: false
+
+spotify:
+  source_weight: 1
+  show_failures: true

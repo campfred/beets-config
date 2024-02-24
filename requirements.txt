@@ -1,0 +1,41 @@
+##
+# Main app
+beets
+
+##
+# Plugin : web
+# Web UI
+flask
+
+##
+# Plugin : chroma
+# Sonic fingerprinting
+pyacoustid
+
+##
+# Plugin : FetchArt
+# Thumbnail downloading
+requests_oauthlib
+requests
+
+##
+# Plugin : lyrics
+# Lyrics obtention
+beautifulsoup4
+
+# ##
+# # Plugin : bpmanalyser
+# # Source : https://github.com/adamjakab/BeetsPluginBpmAnalyser
+# # BPM analysis
+# beets-bpmanalyser
+
+##
+# Plugin : lastgenre
+# Last.FM genres
+pylast
+
+##
+# Plugin : beatport4
+# Source : https://github.com/Samik081/beets-beatport4
+# Beatport source
+beets-beatport4
