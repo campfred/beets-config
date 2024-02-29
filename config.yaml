@@ -42,9 +42,10 @@ plugins:
 item_fields:
   disc_and_track: u'%02i-%02i' % (disc, track) if disctotal > 1 else u'%02i' % (track)
   label_and_catalog: (label + " ~ " + catalognum) if catalognum else label
+  first_albumartist: albumartist.split(", ")[0]
 
 paths:
-  default: $albumartist/$album%aunique{} ($label_and_catalog)/$disc_and_track $title
+  default: $first_albumartist/$album%aunique{} ($label_and_catalog)/$disc_and_track $title
 
 edit:
   itemfields:
