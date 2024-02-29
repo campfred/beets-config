@@ -15,6 +15,7 @@ import:
   # move: true
   move: false
   falsene_rec_action: skip
+  layout: column
   log: Beets.log
 
 plugins:
@@ -58,6 +59,7 @@ edit:
     - genre
     - comments
     - bpm
+    - key
     - comp
   albumfields:
     - album
