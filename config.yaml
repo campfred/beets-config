@@ -107,7 +107,7 @@ fetchart:
   high_resolution: true
 
 musicbrainz:
-  source_weight: 0.4
+  source_weight: 0.7
   extra_tags: [catalognum, label, year]
   external_ids:
     discogs: true
@@ -117,10 +117,10 @@ musicbrainz:
     tidal: true
 
 beatport4:
-  source_weight: 0.7
+  source_weight: 1.0
   art: true
   art_overwrite: false
 
 spotify:
-  source_weight: 1
+  source_weight: 1.3
   show_failures: true
