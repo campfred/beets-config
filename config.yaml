@@ -1,5 +1,5 @@
-directory: D:\Beets\Musique
-library: D:\Beets\Bibliothèque.db
+directory: Musique
+library: Bibliothèque.db
 
 ui:
   terminal_width: 120
@@ -15,7 +15,7 @@ import:
   # move: true
   move: false
   falsene_rec_action: skip
-  log: D:\Musique.beets.log
+  log: Beets.log
 
 plugins:
   - info
