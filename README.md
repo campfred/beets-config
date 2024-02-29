@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Configure the `$Editor` to point to preferred text editor.
+Configure the `Editor` environment variable to point to preferred text editor.
 In my case, for VSCode obtained from WinGet, it is : `code.cmd --wait`
 
 ## Installation
