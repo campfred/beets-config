@@ -4,6 +4,11 @@ library: Bibliothèque.db
 ui:
   terminal_width: 120
   length_diff_thresh: 3
+  import:
+    match_header: 2
+    match_details: 2
+    match_tracklist: 4
+    layout: column
 
 import:
   languages:
@@ -15,7 +20,6 @@ import:
   # move: true
   move: false
   falsene_rec_action: skip
-  layout: column
   log: Beets.log
 
 plugins:
@@ -58,18 +62,18 @@ edit:
     - label
     - catalognum
     - genre
-    - comments
     - bpm
     - key
     - comp
+    - comments
   albumfields:
     - album
     - albumartist
     - label
     - catalognum
     - genre
-    - comments
     - comp
+    - comments
 
 rewrite:
   artist Muzzy: MUZZ
