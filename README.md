@@ -41,3 +41,9 @@ Set the `BEETSDIR` environment variable to correspond to this repository's path,
 ```shell
 pip install -r requirements.txt
 ```
+
+## Useful extra tools
+
+* [COV - Cover Search Engine](https://covers.musichoarders.xyz/)
+* [Ben Dodson's Apple Music Artwork Finder](https://bendodson.com/projects/apple-music-artwork-finder/)
+* [Ben Dodson's iTunes Artwork Finder](https://bendodson.com/projects/itunes-artwork-finder/index.html)
