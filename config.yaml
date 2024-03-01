@@ -11,16 +11,16 @@ ui:
     layout: column
 
 import:
-  languages:
-    - fr
-    - en
-  bell: true
-  # group_albums: true
   write: true
   # move: true
   move: false
-  falsene_rec_action: skip
+  timid: true
   log: Beets.log
+  languages:
+    - fr
+    - en
+  # group_albums: true
+  bell: true
 
 plugins:
   - info
