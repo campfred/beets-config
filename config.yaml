@@ -110,16 +110,16 @@ fetchart:
   high_resolution: true
 
 spotify:
-  source_weight: 1.3
+  source_weight: 1.0
   show_failures: true
 
 beatport4:
-  source_weight: 1.0
+  source_weight: 0.7
   art: true
   art_overwrite: false
 
 musicbrainz:
-  source_weight: 0.7
+  source_weight: 0.4
   extra_tags: [catalognum, label, year]
   external_ids:
     discogs: true
