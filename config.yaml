@@ -106,11 +106,17 @@ bpmanalyser:
   write: true
 
 embedart:
-  maxwidth: 1400
+  maxwidth: 1500
   remove_art_file: false
 
 fetchart:
   quality: 100
+  sources:
+    - itunes
+    - amazon
+    - filesystem
+    - albumart
+    - coverart
   high_resolution: true
 
 spotify:
