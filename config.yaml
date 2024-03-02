@@ -59,6 +59,7 @@ edit:
     - artist
     - album
     - albumartist
+    - cover_art_url
     - label
     - catalognum
     - genre
@@ -69,6 +70,7 @@ edit:
   albumfields:
     - album
     - albumartist
+    - cover_art_url
     - label
     - catalognum
     - genre
