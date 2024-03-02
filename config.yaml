@@ -102,6 +102,7 @@ convert:
 
 replaygain:
   backend: ffmpeg
+  overwrite: true
   # backend: gstreamer
 
 importadded:
