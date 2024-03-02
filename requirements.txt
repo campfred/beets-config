@@ -1,6 +1,6 @@
 ##
 # Main app
-beets
+beets>=1.6.0
 
 ##
 # Plugin : web
