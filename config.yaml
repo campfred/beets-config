@@ -17,6 +17,8 @@ ui:
     layout: newline
 
 per_disc_numbering: true
+format_item: "$artist / $album / $title"
+format_album: "$albumartist / $album"
 
 import:
   write: true
