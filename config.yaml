@@ -22,8 +22,7 @@ format_album: "$albumartist / $album"
 
 import:
   write: true
-  # move: true
-  move: false
+  move: true
   timid: true
   log: Beets.log
   languages:
