@@ -126,11 +126,10 @@ embedart:
 fetchart:
   quality: 100
   sources:
+    - filesystem
     - itunes
     - amazon
-    - filesystem
-    - albumart
-    - coverart
+    - "*"
   high_resolution: true
 
 spotify:
