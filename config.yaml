@@ -17,8 +17,16 @@ ui:
     layout: newline
 
 per_disc_numbering: true
+rewrite:
+  artist Muzzy: MUZZ
+item_fields:
+  is_multidisc: disctotal > 1
+  label_with_catalognum: (label + " ~ " + catalognum) if catalognum else label
+  first_albumartist: albumartist.split(", ")[0]
 format_item: "$artist / $album / $title"
 format_album: "$albumartist / $album"
+paths:
+  default: $first_albumartist/$album%aunique{} ($label_with_catalognum)/%if{$is_multidisc,$disc-}$track $title
 
 import:
   write: true
@@ -52,14 +60,6 @@ plugins:
   - embedart
   - fetchart
 
-item_fields:
-  is_multidisc: disctotal > 1
-  label_with_catalognum: (label + " ~ " + catalognum) if catalognum else label
-  first_albumartist: albumartist.split(", ")[0]
-
-paths:
-  default: $first_albumartist/$album%aunique{} ($label_with_catalognum)/%if{$is_multidisc,$disc-}$track $title
-
 edit:
   itemfields:
     - disc
@@ -85,9 +85,6 @@ edit:
     - genre
     - comp
     - comments
-
-rewrite:
-  artist Muzzy: MUZZ
 
 convert:
   auto: false
