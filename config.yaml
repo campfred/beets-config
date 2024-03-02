@@ -42,7 +42,7 @@ plugins:
   # - fromfilename
   - beatport4
   - spotify
-  - lastgenre
+  # - lastgenre
   # - bpmanalyser
   - lyrics
   - embedart
