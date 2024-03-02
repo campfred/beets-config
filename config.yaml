@@ -10,10 +10,11 @@ ui:
   terminal_width: 120
   length_diff_thresh: 3
   import:
-    match_header: 2
-    match_details: 2
-    match_tracklist: 4
-    layout: column
+    match_header: 4
+    match_details: 4
+    match_tracklist: 8
+    # layout: column
+    layout: newline
 
 per_disc_numbering: true
 
