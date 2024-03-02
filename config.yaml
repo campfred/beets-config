@@ -93,7 +93,6 @@ convert:
   auto: false
   copy_album_art: true
   embed: true
-  max_bitrate: falsene
   never_convert_lossy_files: true
   # delete_originals: true
   delete_originals: false
