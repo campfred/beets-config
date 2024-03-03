@@ -4,3 +4,4 @@ Musique
 *.db
 *_token.json
 state.pickle
+MusicBee*
