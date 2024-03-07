@@ -26,7 +26,7 @@ item_fields:
 format_item: "$artist / $album / $title [$label_with_catalognum] (%if{$bpm,$bpm})"
 format_album: "$albumartist / $album"
 paths:
-  default: $first_albumartist/$album%aunique{} ($label_with_catalognum)/%if{$is_multidisc,$disc-}$track $title
+  default: $first_albumartist/$album%aunique{} ($year) [$label_with_catalognum]/%if{$is_multidisc,$disc-}$track $title
 
 import:
   write: true
@@ -91,7 +91,6 @@ convert:
   copy_album_art: true
   embed: true
   never_convert_lossy_files: true
-  # delete_originals: true
   delete_originals: false
   format: flac
   # format: aiff
