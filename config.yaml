@@ -64,6 +64,7 @@ plugins:
 edit:
   itemfields:
     - disc
+    - disctotal
     - track
     - title
     - artist
@@ -81,6 +82,7 @@ edit:
     - album
     - albumartist
     - cover_art_url
+    - disctotal
     - label
     - catalognum
     - genre
