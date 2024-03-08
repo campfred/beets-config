@@ -97,10 +97,10 @@ convert:
   delete_originals: false
   format: flac
   # format: aiff
-  # formats:
-  #   aiff:
-  #     command: ffmpeg -i $source -write_id3v2 1 -c:v copy $dest
-  #     extension: aiff
+  formats:
+    aiff:
+      command: ffmpeg -i $source -write_id3v2 1 -c:v copy $dest
+      extension: aiff
 
 replaygain:
   backend: ffmpeg
