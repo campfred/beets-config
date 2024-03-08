@@ -24,8 +24,8 @@ item_fields:
   is_multidisc: disctotal > 1
   label_with_catalognum: (label + " ~ " + catalognum) if catalognum else label
   first_albumartist: albumartist.split(", ")[0]
-format_item: "$artist / $album / $title [$label_with_catalognum] (%if{$bpm,$bpm})"
-format_album: "$albumartist / $album"
+format_item: "$artist / $album / %if{$is_multidisc,$disc-}$track $title %if{$label,[$label_with_catalognum]} (%if{$bpm,$bpm})"
+format_album: "$albumartist / $album %if{$is_multidisc,($disctotal)}"
 paths:
   default: $first_albumartist/$album%aunique{} ($year) [$label_with_catalognum]/%if{$is_multidisc,$disc-}$track $title
 
