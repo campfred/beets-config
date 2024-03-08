@@ -19,6 +19,7 @@ ui:
 per_disc_numbering: true
 rewrite:
   artist Muzzy: MUZZ
+  artist FISHER: FISHER (OZ)
 item_fields:
   is_multidisc: disctotal > 1
   label_with_catalognum: (label + " ~ " + catalognum) if catalognum else label
