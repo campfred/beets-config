@@ -13,7 +13,6 @@ ui:
     match_header: 4
     match_details: 4
     match_tracklist: 8
-    # layout: column
     layout: newline
 
 per_disc_numbering: true
@@ -48,6 +47,7 @@ plugins:
   - duplicates
   - unimported
   - importadded
+  - types
   - edit
   - chroma # pyacoustid
   - convert
@@ -60,6 +60,9 @@ plugins:
   - lyrics
   - embedart
   - fetchart
+
+types:
+  rating: int
 
 edit:
   itemfields:
@@ -74,6 +77,7 @@ edit:
     - label
     - catalognum
     - genre
+    - rating
     - bpm
     - key
     - comp
