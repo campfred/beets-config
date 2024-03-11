@@ -21,14 +21,13 @@ rewrite:
   artist FISHER: FISHER (OZ)
 item_fields:
   is_multidisc: disctotal > 1
-  label_and_catalognum: (label + " ~ " + catalognum) if catalognum else label
   first_albumartist: albumartist.split(", ")[0]
-format_item: " $artist    󰀥 $album ($year)%if{$label,    󰴓 $label_and_catalognum}    󰽰 %if{$is_multidisc,$disc-}%if{tracktotal > 1,$track : }$title%if{bpm,     $bpm bpm}"
+format_item: " $artist    󰀥 $album ($year)%if{$label,    󰴓 %if{catalognum,$catalognum @ }$label}    󰽰 %if{$is_multidisc,$disc-}%if{tracktotal > 1,$track : }$title%if{bpm,     $bpm bpm}"
 format_album: " $albumartist    󰀥 $album %if{$is_multidisc,($disctotal discs)}"
 paths:
-  default: $first_albumartist/$album%aunique{} ($year) %if{$label,[$label_and_catalognum]}/%if{$is_multidisc,$disc-}$track $title
-  comp: Compilations/$first_albumartist/$album%aunique{} ($year) %if{$label,[$label_and_catalognum]}/%if{$is_multidisc,$disc-}$track $artist - $title
-  mix: Mixes/$first_albumartist/$album ($year) %if{$label,[$label_and_catalognum]}/%if{$is_multidisc,$disc-}$track $title
+  default: $first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/%if{$is_multidisc,$disc-}$track $title
+  albumtype:DJ-mix: Mixes/$first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/%if{$is_multidisc,$disc-}$track $title
+  comp: Compilations/$first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/%if{$is_multidisc,$disc-}$track $artist - $title
 
 import:
   write: true
@@ -75,6 +74,7 @@ edit:
     - artist
     - album
     - albumartist
+    - albumtype
     - cover_art_url
     - label
     - catalognum
@@ -87,6 +87,7 @@ edit:
   albumfields:
     - album
     - albumartist
+    - albumtype
     - cover_art_url
     - disctotal
     - label
