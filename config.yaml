@@ -19,14 +19,22 @@ rewrite:
   artist Muzzy: MUZZ
   artist FISHER: FISHER (OZ)
 item_fields:
-  is_multidisc: disctotal > 1
+  smart_disc_and_track_numbers: |
+    result = ""
+    if tracktotal > 1:
+      if disctotal > 1:
+        result += str(disc) + "-"
+      result += str(track).zfill(2) if tracktotal >= 10 else str(track)
+    if len(result) > 0:
+      result += " "
+    return result
   first_albumartist: albumartist.split(", ")[0]
-format_item: " $artist   󰀥 $album ($year)%if{$label,   󰴓 %if{catalognum,$catalognum @ }$label}   󰽰 %if{$is_multidisc,$disc-}%if{tracktotal > 1,$track : }$title%if{bpm,    $bpm bpm}"
-format_album: " $albumartist   󰀥 $album %if{$is_multidisc,($disctotal discs)}"
+format_item:  $albumartist     󰀥 $album ($year)%if{$label,   󰴓 %if{catalognum,$catalognum }$label}     󰽰 $smart_disc_and_track_numbers$title    $artist    $genre%if{bpm,$bpm bpm}
+format_album:  $albumartist     󰀥 $album ($year)%if{disctotal > 1, ($disctotal discs)} ($albumtype)%if{$label,   󰴓 %if{catalognum,$catalognum }$label}
 paths:
-  default: $first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/%if{$is_multidisc,$disc-}$track $title
-  albumtype:DJ-mix: Mixes/$first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/%if{$is_multidisc,$disc-}$track $title
-  comp: Compilations/$first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/%if{$is_multidisc,$disc-}$track $artist - $title
+  default: $first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
+  albumtype:DJ-mix: Mixes/$first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
+  comp: Compilations/$first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$artist - $title
 
 import:
   write: true
@@ -68,6 +76,7 @@ edit:
     - disc
     - disctotal
     - track
+    - tracktotal
     - title
     - artist
     - album
