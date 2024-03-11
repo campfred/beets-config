@@ -21,8 +21,8 @@ rewrite:
 item_fields:
   is_multidisc: disctotal > 1
   first_albumartist: albumartist.split(", ")[0]
-format_item: " $artist    󰀥 $album ($year)%if{$label,    󰴓 %if{catalognum,$catalognum @ }$label}    󰽰 %if{$is_multidisc,$disc-}%if{tracktotal > 1,$track : }$title%if{bpm,     $bpm bpm}"
-format_album: " $albumartist    󰀥 $album %if{$is_multidisc,($disctotal discs)}"
+format_item: " $artist   󰀥 $album ($year)%if{$label,   󰴓 %if{catalognum,$catalognum @ }$label}   󰽰 %if{$is_multidisc,$disc-}%if{tracktotal > 1,$track : }$title%if{bpm,    $bpm bpm}"
+format_album: " $albumartist   󰀥 $album %if{$is_multidisc,($disctotal discs)}"
 paths:
   default: $first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/%if{$is_multidisc,$disc-}$track $title
   albumtype:DJ-mix: Mixes/$first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/%if{$is_multidisc,$disc-}$track $title
