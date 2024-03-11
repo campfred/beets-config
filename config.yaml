@@ -7,7 +7,7 @@ library: Bibliothèque.db
 ##
 
 ui:
-  terminal_width: 120
+  # terminal_width: 120
   length_diff_thresh: 3
   import:
     match_header: 4
