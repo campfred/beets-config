@@ -34,6 +34,7 @@ format_album:  $albumartist     󰀥 $album ($year)%if{disctotal > 1, ($di
 paths:
   default: $first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
   albumtype:DJ-mix: Mixes/$first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
+  albumtype:Soundtrack: Bandes sonores/$first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
   comp: Compilations/$first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$artist - $title
 
 import:
