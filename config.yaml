@@ -29,12 +29,12 @@ item_fields:
       result += " "
     return result
   first_albumartist: albumartist.split(", ")[0]
-format_item:  $albumartist     󰀥 $album ($year)%if{$label,   󰴓 %if{catalognum,$catalognum }$label}     󰽰 $smart_disc_and_track_numbers$title    $artist    $genre%if{bpm,$bpm bpm}
+format_item:  $albumartist     󰀥 $album ($year)%if{$label,   󰴓 %if{catalognum,$catalognum }$label}     󰽰 $smart_disc_and_track_numbers$title    $artist    $genre%if{bpm, @ $bpm bpm}
 format_album:  $albumartist     󰀥 $album ($year)%if{disctotal > 1, ($disctotal discs)} ($albumtype)%if{$label,   󰴓 %if{catalognum,$catalognum }$label}
 paths:
-  default: $first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
-  albumtype:DJ-mix: Mixes/$first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
-  comp: Compilations/$first_albumartist/$album%aunique{} ($year)[%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$artist - $title
+  default: $first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
+  albumtype:DJ-mix: Mixes/$first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
+  comp: Compilations/$first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$artist - $title
 
 import:
   write: true
