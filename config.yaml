@@ -59,6 +59,7 @@ import:
 
 plugins:
   - info
+  - the
   - inline
   - web
   - fuzzy
