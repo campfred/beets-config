@@ -158,6 +158,7 @@ fetchart:
     - filesystem
     - itunes
     - amazon
+    - spotify
     - "*"
   high_resolution: true
 
