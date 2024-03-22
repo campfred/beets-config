@@ -28,14 +28,24 @@ item_fields:
     if len(result) > 0:
       result += " "
     return result
+  smart_label_and_catalog_for_path: |
+    result = ""
+    if len(catalognum) > 0:
+      result += catalognum
+    if len(label) > 0 and len(catalognum) > 0:
+      result += " @ "
+    if len(label) > 0:
+      result += label
+    return (" " + result) if label or catalognum else ""
   first_albumartist: albumartist.split(", ")[0]
-format_item:  $albumartist     󰀥 $album ($year)%if{$label,   󰴓 %if{catalognum,$catalognum }$label}     󰽰 $smart_disc_and_track_numbers$title    $artist    $genre%if{bpm > 0, @ $bpm bpm}
-format_album:  $albumartist     󰀥 $album ($year)%if{disctotal > 1, ($disctotal discs)} ($albumtype)%if{$label,   󰴓 %if{catalognum,$catalognum }$label}
+format_item:  $albumartist     󰀥 $album ($year)%if{$label,   󰴓 %if{catalognum,$catalognum   }$label}     󰽰 $smart_disc_and_track_numbers$title    $artist    $genre%if{bpm > 0, @ $bpm bpm}
+format_album:  $albumartist     󰀥 $album ($year)%if{disctotal > 1, ($disctotal discs)} ($albumtype)%if{$label,   󰴓 %if{catalognum,$catalognum   }$label}
 paths:
-  default: $first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
-  albumtype:DJ-mix: Mixes/$first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
-  albumtype:Soundtrack: Bandes sonores/$first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$title
-  comp: Compilations/$first_albumartist/$album%aunique{} ($year) [%if{label,%if{catalognum,$catalognum @ }$label}]/$smart_disc_and_track_numbers$artist - $title
+  default: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
+  singleton: Musique/%the{$first_albumartist}/$title$smart_label_and_catalog_for_path
+  albumtype:DJ-mix: Mixes/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
+  albumtype:Soundtrack: Bandes sonores/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
+  comp: Compilations/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$artist - $title
 
 import:
   write: true
