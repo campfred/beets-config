@@ -94,6 +94,7 @@ edit:
     - album
     - albumartist
     - albumtype
+    - year
     - cover_art_url
     - label
     - catalognum
@@ -101,12 +102,14 @@ edit:
     - rating
     - bpm
     - key
+    - version
     - comp
     - comments
   albumfields:
     - album
     - albumartist
     - albumtype
+    - year
     - cover_art_url
     - disctotal
     - label
