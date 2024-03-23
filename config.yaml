@@ -38,7 +38,7 @@ item_fields:
       result += label
     return (" " + result) if label or catalognum else ""
   first_albumartist: albumartist.split(", ")[0]
-format_item:  $albumartist     󰀥 $album ($year)%if{$label,   󰴓 %if{catalognum,$catalognum   }$label}     󰽰 $smart_disc_and_track_numbers$title    $artist    $genre%if{bpm > 0, @ $bpm bpm}
+format_item:  $albumartist     󰀥 $album ($year)%if{$label,   󰴓 %if{catalognum,$catalognum   }$label}     󰽰 $smart_disc_and_track_numbers$title    $artist    $genre%if{bpm > 0, @ $bpm bpm} in $format
 format_album:  $albumartist     󰀥 $album ($year)%if{disctotal > 1, ($disctotal discs)} ($albumtype)%if{$label,   󰴓 %if{catalognum,$catalognum   }$label}
 paths:
   default: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
@@ -82,6 +82,7 @@ plugins:
 
 types:
   rating: int
+  bpm: float
 
 edit:
   itemfields:
@@ -122,13 +123,18 @@ convert:
   auto: false
   copy_album_art: true
   embed: true
-  never_convert_lossy_files: true
+  no_convert:
+    - format:flac
+    - format:mp3
+    - format:aac
   delete_originals: false
   format: flac
-  # format: aiff
   formats:
+    flac:
+      command: ffmpeg -i $source -compression_level 5 $dest
+      extension: flac
     aiff:
-      command: ffmpeg -i $source -write_id3v2 1 -c:v copy $dest
+      command: ffmpeg -i $source -write_id3v2 1 $dest
       extension: aiff
 
 replaygain:
@@ -170,6 +176,8 @@ beatport4:
   source_weight: 0.7
   art: true
   art_overwrite: false
+  username: campfred
+  password: PompUpDatJ4m!
 
 musicbrainz:
   source_weight: 0.4
