@@ -1,0 +1,16 @@
+ui:
+  length_diff_thresh: 3
+  import:
+    match_header: 4
+    match_details: 4
+    match_tracklist: 8
+    layout: newline
+
+per_disc_numbering: true
+
+format_item:  $albumartist     󰀥 $album ($year)%if{$label,   󰴓 %if{catalognum,$catalognum   }$label}     󰽰 $smart_disc_and_track_numbers$title    $artist    $genre%if{bpm > 0, @ $bpm bpm} in $format
+format_album:  $albumartist     󰀥 $album ($year)%if{disctotal > 1, ($disctotal discs)} ($albumtype)%if{$label,   󰴓 %if{catalognum,$catalognum   }$label}
+
+rewrite:
+  artist Muzzy: MUZZ
+  artist FISHER: FISHER (OZ)

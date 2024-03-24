@@ -42,7 +42,7 @@ Here's how to get setup my Beets configuration.
 
       ```shell
       python -m pip install --upgrade pip
-      pip install -r requirements.txt
+      pip install --requirement requirements.txt
       ```
 
 ***Voilà!***
