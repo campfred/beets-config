@@ -6,7 +6,7 @@ convert:
     - format:flac
     - format:mp3
     - format:aac
-  delete_originals: false
+  delete_originals: true
   format: flac
   formats:
     flac:
