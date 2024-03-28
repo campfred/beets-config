@@ -15,13 +15,14 @@ paths:
 item_fields:
   smart_disc_and_track_numbers: |
     result = ""
-    if tracktotal > 1:
+    if albumtype.capitalize() != "Single" and albumtype.capitalize() != "Remix":
+      if tracktotal > 1:
+        result += str(track).zfill(2) if tracktotal >= 10 else str(track)
+      if disctotal > 1 and tracktotal > 1:
+        result = "-" + result
       if disctotal > 1:
-        result += str(disc) + "-"
-      result += str(track).zfill(2) if tracktotal >= 10 else str(track)
-    if len(result) > 0:
-      result += " "
-    return result
+        result = str(disc) + result
+    return result + (" " if len(result) > 0 else "")
   smart_label_and_catalog_for_path: |
     result = ""
     if len(catalognum) > 0:
