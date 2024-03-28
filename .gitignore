@@ -1,3 +1,6 @@
+*.DS_Store
+Beets
+Import
 *.db
 *.log
 *_token.json
@@ -13,4 +16,3 @@ state.pickle
 *.ini
 *.mbp
 *.bak
-*.DS_Store
