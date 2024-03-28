@@ -25,14 +25,14 @@ item_fields:
     return result + (" " if len(result) > 0 else "")
   smart_label_and_catalog_for_path: |
     result = ""
-    if len(catalognum) > 0:
-      result += catalognum
     if len(label) > 0 and len(catalognum) > 0:
       result += " @ "
+    if len(catalognum) > 0:
+      result += catalognum
     if len(label) > 0:
-      result += label
-    return (" " + result) if label or catalognum else ""
-  first_albumartist: albumartist.split(", ")[0]
+      result = label + result
+    return " [" + result + "]" if len(result) > 0 else ""
+  first_albumartist: albumartist.split(", ")[0].strip()
 
 import:
   write: true
