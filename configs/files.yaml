@@ -7,7 +7,7 @@ directory: D:\Beets
 library: Bibliothèque.db
 paths:
   default: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
-  singleton: Musique/%the{$first_albumartist}/$title$smart_label_and_catalog_for_path
+  singleton: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$title
   albumtype:DJ-mix: Mixes/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
   albumtype:Soundtrack: Bandes sonores/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
   comp: Compilations/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$artist - $title
