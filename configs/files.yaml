@@ -17,11 +17,11 @@ item_fields:
     result = ""
     if albumtype.capitalize() != "Single" and albumtype.capitalize() != "Remix":
       if tracktotal > 1:
-        result += str(track).zfill(2) if tracktotal >= 10 else str(track)
+        result += str(track).zfill(len(str(tracktotal))) if tracktotal >= 10 else str(track)
       if disctotal > 1 and tracktotal > 1:
         result = "-" + result
       if disctotal > 1:
-        result = str(disc) + result
+        result = str(disc).zfill(len(str(disctotal))) if disctotal >= 10 else str(disc) + result
     return result + (" " if len(result) > 0 else "")
   smart_label_and_catalog_for_path: |
     result = ""
