@@ -10,7 +10,7 @@ convert:
   format: flac
   formats:
     flac:
-      command: ffmpeg -i $source -compression_level 5 $dest
+      command: ffmpeg -i $source $dest
       extension: flac
     aiff:
       command: ffmpeg -i $source -write_id3v2 1 $dest
