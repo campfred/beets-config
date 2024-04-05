@@ -22,8 +22,8 @@ plugins:
   - fetchart
 
 include:
-  - configs/files.yaml
-  - configs/data.yaml
-  - configs/quality.yaml
-  - configs/sources.yaml
-  - configs/display.yaml
+  - .configs/files.yaml
+  - .configs/data.yaml
+  - .configs/quality.yaml
+  - .configs/sources.yaml
+  - .configs/display.yaml
