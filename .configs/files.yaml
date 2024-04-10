@@ -13,6 +13,16 @@ paths:
   comp: Compilations/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$artist - $title
 
 item_fields:
+  first_albumartist: albumartist.split(",")[0].strip()
+  smart_label_and_catalog_for_path: |
+    result = ""
+    if len(label) > 0 and len(catalognum) > 0:
+      result += " @ "
+    if len(catalognum) > 0:
+      result += catalognum
+    if len(label) > 0:
+      result = label + result
+    return " [" + result + "]" if len(result) > 0 else ""
   smart_disc_and_track_numbers: |
     result = ""
     if albumtype.capitalize() != "Single" and albumtype.capitalize() != "Remix":
@@ -23,16 +33,6 @@ item_fields:
       if disctotal > 1:
         result = str(disc).zfill(len(str(disctotal))) if disctotal >= 10 else str(disc) + result
     return result + (" " if len(result) > 0 else "")
-  smart_label_and_catalog_for_path: |
-    result = ""
-    if len(label) > 0 and len(catalognum) > 0:
-      result += " @ "
-    if len(catalognum) > 0:
-      result += catalognum
-    if len(label) > 0:
-      result = label + result
-    return " [" + result + "]" if len(result) > 0 else ""
-  first_albumartist: albumartist.split(", ")[0].strip()
 
 import:
   write: true

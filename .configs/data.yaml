@@ -4,35 +4,34 @@ types:
 
 edit:
   itemfields:
+    - albumartist
+    - album
     - disc
     - disctotal
+    - albumtype
+    - comp
+    - year
+    - label
+    - catalognum
+    - cover_art_url
+    - artist
     - track
     - tracktotal
     - title
-    - artist
-    - album
-    - albumartist
-    - albumtype
-    - year
-    - cover_art_url
-    - label
-    - catalognum
     - genre
     - rating
     - bpm
     - key
-    - version
-    - comp
     - comments
   albumfields:
-    - album
     - albumartist
-    - albumtype
-    - year
-    - cover_art_url
+    - album
     - disctotal
+    - albumtype
     - label
     - catalognum
-    - genre
+    - cover_art_url
     - comp
+    - year
+    - genre
     - comments
