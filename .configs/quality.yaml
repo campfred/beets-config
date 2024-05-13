@@ -34,7 +34,7 @@ bpmanalyser:
   write: true
 
 embedart:
-  maxwidth: 1500
+  maxwidth: 1280
   remove_art_file: false
 
 fetchart:
