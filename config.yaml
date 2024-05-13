@@ -9,7 +9,7 @@ plugins:
   - importadded
   - types
   - edit
-  - chroma # pyacoustid
+  # - chroma # pyacoustid
   - convert
   - replaygain
   # - fromfilename
