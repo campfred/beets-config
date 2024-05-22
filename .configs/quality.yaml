@@ -1,5 +1,5 @@
 convert:
-  auto: false
+  auto: true
   copy_album_art: true
   embed: true
   no_convert:
@@ -9,12 +9,11 @@ convert:
   delete_originals: true
   format: flac
   formats:
+    # Commands have the « -y » option to allow overwriting when the previous temporary file from last attempt is still there.
     flac:
-      command: ffmpeg -i $source $dest
-      extension: flac
+      command: ffmpeg -i $source $dest -y
     aiff:
-      command: ffmpeg -i $source -write_id3v2 1 $dest
-      extension: aiff
+      command: ffmpeg -i $source -write_id3v2 1 $dest -y
 
 replaygain:
   backend: ffmpeg
