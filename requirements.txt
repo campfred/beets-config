@@ -18,11 +18,6 @@ pyacoustid
 requests_oauthlib
 requests
 
-##
-# Plugin : lyrics
-# Lyrics obtention
-beautifulsoup4
-
 # ##
 # # Plugin : bpmanalyser
 # # Source : https://github.com/adamjakab/BeetsPluginBpmAnalyser
