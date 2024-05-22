@@ -23,6 +23,7 @@ edit:
     - bpm
     - key
     - comments
+    - lyrics
   albumfields:
     - albumartist
     - album
