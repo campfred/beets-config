@@ -37,6 +37,7 @@ item_fields:
 import:
   write: true
   move: true
+  copy: false
   timid: true
   log: Beets.log
   languages:

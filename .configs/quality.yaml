@@ -1,4 +1,5 @@
 convert:
+  tmpdir: D:\Beets\.temp
   formats:
     flac:
       command: ffmpeg -i $source $dest -y
