@@ -1,41 +1,35 @@
 {
-	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-02-24T17:04:05.928-00:00",
-	"Sources" : 
-	[
+	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+	"CreationDate": "2024-02-24T17:04:05.928-00:00",
+	"Sources": [
 		{
-			"Packages" : 
-			[
+			"Packages": [
 				{
-					"PackageIdentifier" : "Microsoft.VisualStudio.2022.BuildTools"
+					"PackageIdentifier": "Microsoft.VisualStudio.2022.BuildTools"
 				},
 				{
-					"PackageIdentifier" : "Rustlang.Rustup"
+					"PackageIdentifier": "Rustlang.Rustup"
 				},
 				{
-					"PackageIdentifier" : "ImageMagick.ImageMagick"
+					"PackageIdentifier": "Gyan.FFmpeg"
 				},
 				{
-					"PackageIdentifier" : "Gyan.FFmpeg"
+					"PackageIdentifier": "gstreamerproject.gstreamer"
 				},
 				{
-					"PackageIdentifier" : "gstreamerproject.gstreamer"
+					"PackageIdentifier": "AcoustID.Chromaprint"
 				},
 				{
-					"PackageIdentifier" : "AcoustID.Chromaprint"
-				},
-				{
-					"PackageIdentifier" : "Python.Python.3.6"
+					"PackageIdentifier": "Python.Python.3.12"
 				}
 			],
-			"SourceDetails" : 
-			{
-				"Argument" : "https://cdn.winget.microsoft.com/cache",
-				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
-				"Name" : "winget",
-				"Type" : "Microsoft.PreIndexed.Package"
+			"SourceDetails": {
+				"Argument": "https://cdn.winget.microsoft.com/cache",
+				"Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name": "winget",
+				"Type": "Microsoft.PreIndexed.Package"
 			}
 		}
 	],
-	"WinGetVersion" : "1.6.3482"
+	"WinGetVersion": "1.6.3482"
 }

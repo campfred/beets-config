@@ -1,6 +1,12 @@
 ##
 # Main app
-beets>=1.6.0
+beets>=2.0.0
+
+##
+# Plugin : EmbedArt
+# Source : https://beets.readthedocs.io/en/stable/plugins/embedart.html
+# Cover art embedding
+pillow
 
 ##
 # Plugin : web
@@ -12,22 +18,11 @@ flask
 # Sonic fingerprinting
 pyacoustid
 
-##
-# Plugin : FetchArt
-# Thumbnail downloading
-requests_oauthlib
-requests
-
 # ##
 # # Plugin : bpmanalyser
 # # Source : https://github.com/adamjakab/BeetsPluginBpmAnalyser
 # # BPM analysis
 # beets-bpmanalyser
-
-##
-# Plugin : lastgenre
-# Last.FM genres
-pylast
 
 ##
 # Plugin : beatport4

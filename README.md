@@ -28,7 +28,7 @@ Here's how to get setup my Beets configuration.
       winget install Gyan.FFmpeg
       winget install gstreamerproject.gstreamer
       winget install AcoustID.Chromaprint
-      winget install Python.Python.3.6
+      winget install Python.Python.3.12
       ```
 
       then

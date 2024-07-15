@@ -16,6 +16,7 @@ convert:
   embed: true
 
 replaygain:
+  auto: true
   backend: ffmpeg
   # backend: gstreamer
   overwrite: true

@@ -12,11 +12,8 @@ plugins:
   # - chroma # pyacoustid
   - convert
   - replaygain
-  # - fromfilename
   - beatport4
   - spotify
-  # - lastgenre
-  # - bpmanalyser
   - embedart
   - fetchart
 
