@@ -5,15 +5,10 @@
 ##
 directory: D:\Beets
 library: Bibliothèque.db
-paths:
-  default: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
-  singleton: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$title
-  albumtype:DJ-mix: Mixes/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
-  albumtype:Soundtrack: Bandes sonores/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
-  comp: Compilations/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$artist - $title
 
 item_fields:
   first_albumartist: albumartist.split(",")[0].strip()
+  first_genre: genre.split(",")[0].strip()
   smart_label_and_catalog_for_path: |
     result = ""
     if len(label) > 0 and len(catalognum) > 0:
@@ -44,3 +39,10 @@ import:
     - fr
     - en
   bell: true
+
+paths:
+  default: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
+  singleton: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$title
+  albumtype:DJ-mix: Mixes/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
+  albumtype:Soundtrack: Bandes sonores/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
+  comp: Compilations/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$artist - $title
