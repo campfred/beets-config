@@ -5,6 +5,10 @@ convert:
       command: ffmpeg -i $source $dest -y
     aiff:
       command: ffmpeg -i $source -write_id3v2 1 $dest -y
+    aac:
+      command: ffmpeg -i $source -c:a aac -b:a 256k $dest -y
+    mp3:
+      command: ffmpeg -i $source -c:a mp3 -b:a 320k $dest -y
   format: flac
   no_convert:
     - format:flac
