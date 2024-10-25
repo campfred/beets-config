@@ -13,4 +13,4 @@ format_album:  $albumartist     󰀥 $album ($year) [$albumtype]%if{discto
 
 rewrite:
   artist Muzzy: MUZZ
-  artist FISHER: FISHER (OZ)
+  artist FISHER \(OZ\): FISHER
