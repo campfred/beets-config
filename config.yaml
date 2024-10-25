@@ -11,6 +11,7 @@ plugins:
   - edit
   # - chroma # pyacoustid
   - convert
+  - alternatives
   - replaygain
   - beatport4
   - spotify

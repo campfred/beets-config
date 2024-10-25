@@ -28,6 +28,28 @@ item_fields:
       if disctotal > 1:
         result = str(disc).zfill(len(str(disctotal))) if disctotal >= 10 else str(disc) + result
     return result + (" " if len(result) > 0 else "")
+  genre_bucket: |
+    first_genre = genre.split(",")[0].strip().lower()
+    genre_bucket = None
+    if "pop" in first_genre:
+      genre_bucket = "Pop"
+    elif "rock" in first_genre:
+      genre_bucket = "Rock"
+    elif "Metal" in first_genre:
+      genre_bucket = "Metal"
+    elif "house" in first_genre:
+      genre_bucket = "House"
+    elif "trance" in first_genre:
+      genre_bucket = "Trance"
+    elif "electro" in first_genre or "bounce" in first_genre or "room":
+      genre_bucket = "Electro"
+    elif "hard" in first_genre and not ("rock" in first_genre or "metal" in first_genre):
+      genre_bucket = "Hard Dance"
+    elif "drum" in first_genre:
+      genre_bucket = "Drum & Bass"
+    elif "dub" in first_genre or "trap" in first_genre or "bass" in first_genre or "breaks" in first_genre or "downtempo" in first_genre:
+      genre_bucket = "Bass"
+    return genre_bucket
 
 import:
   write: true
@@ -46,3 +68,14 @@ paths:
   albumtype:DJ-mix: Mixes/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
   albumtype:Soundtrack: Bandes sonores/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
   comp: Compilations/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$artist - $title
+
+alternatives:
+  car:
+    directory: M:\Beets
+    paths:
+      albumtype:DJ-mix: Mixes/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
+      albumtype:Album: Albums/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
+      default: Musique/%if{genre_bucket,$genre_bucket/}$first_genre/$year/$artist - $title
+    formats: aac
+    query: albumtype:DJ-mix
+    removable: true
