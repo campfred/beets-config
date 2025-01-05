@@ -10,10 +10,7 @@ convert:
     mp3:
       command: ffmpeg -i $source -c:a mp3 -b:a 320k $dest -y
   format: flac
-  no_convert:
-    - format:flac
-    - format:mp3
-    - format:aac
+  no_convert: format:flac, format:mp3, format:aac
   auto: true
   delete_originals: true
   copy_album_art: true
