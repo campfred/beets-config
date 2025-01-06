@@ -16,7 +16,7 @@ plugins:
   - spotify
   - embedart
   - fetchart
-  - subsonicupdate
+  # - subsonicupdate
 
 include:
   - .configs/files.yaml
