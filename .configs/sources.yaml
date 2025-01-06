@@ -1,9 +1,9 @@
 spotify:
-  source_weight: 1.0
-  show_failures: true
+  source_weight: 0.8
+  show_failures: false
 
 beatport4:
-  source_weight: 0.7
+  source_weight: 1.0
   art: true
   art_overwrite: false
 
