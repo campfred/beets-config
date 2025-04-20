@@ -20,13 +20,14 @@ item_fields:
     return " [" + result + "]" if len(result) > 0 else ""
   smart_disc_and_track_numbers: |
     result = ""
-    if albumtype.capitalize() != "Single" and albumtype.capitalize() != "Remix":
+    if albumtype.capitalize() != "Single":
       if tracktotal > 1:
         result += str(track).zfill(len(str(tracktotal))) if tracktotal >= 10 else str(track)
-      if disctotal > 1 and tracktotal > 1:
-        result = "-" + result
-      if disctotal > 1:
-        result = str(disc).zfill(len(str(disctotal))) if disctotal >= 10 else str(disc) + result
+      if albumtype.capitalize() != "Remix" and albumtype.upper() != "EP":
+        if disctotal > 1 and tracktotal > 1:
+          result = "-" + result
+        if disctotal > 1:
+          result = str(disc).zfill(len(str(disctotal))) if disctotal >= 10 else str(disc) + result
     return result + (" " if len(result) > 0 else "")
 
 import:
