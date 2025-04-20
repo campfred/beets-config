@@ -1,14 +1,14 @@
 spotify:
-  source_weight: 0.8
+  source_weight: 0.4
   show_failures: false
 
 beatport4:
-  source_weight: 1.0
+  source_weight: 0.8
   art: true
   art_overwrite: false
 
 musicbrainz:
-  source_weight: 0.4
+  source_weight: 0.2
   extra_tags: [catalognum, label, year]
   external_ids:
     discogs: true
