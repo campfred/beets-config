@@ -12,6 +12,7 @@ plugins:
   # - chroma # pyacoustid
   - convert
   - replaygain
+  - autobpm
   - beatport4
   - spotify
   - embedart
@@ -24,4 +25,4 @@ include:
   - .configs/quality.yaml
   - .configs/sources.yaml
   - .configs/display.yaml
-  - .configs/services.yaml
+  # - .configs/services.yaml
