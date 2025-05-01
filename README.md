@@ -41,7 +41,10 @@ Here's how to get setup my Beets configuration.
    2. Python
 
       ```shell
-      python -m pip install --upgrade pip
+      python -m venv .venv --upgrade-deps
+      # Activate virtual environment
+      # Windows : & .venv/Scripts/Activate.ps1
+      # Linux : source .venv/bin/activate
       pip install --requirement requirements.txt
       ```
 
