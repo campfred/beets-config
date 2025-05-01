@@ -9,14 +9,12 @@ ui:
 per_disc_numbering: true
 
 format_item: |
-   $albumartist
-  󰀥 $album ($year) [$albumtype]%if{$label,   󰴓 %if{catalognum,$catalognum   }$label}
-   $artist
-  󰽰 $smart_disc_and_track_numbers$title
-   $genre%if{bpm > 0, @ $bpm bpm} in $format
+   $path
+   $artist  $title ( $genre%if{bpm > 0, 󰟚 $bpm bpm}) [ $format]
+   $albumartist  󰀥 $album ($year) [$albumtype]%if{$label, (󰴓 $label%if{catalognum,  $catalognum}})
+
 format_album: |
-   $albumartist
-  󰀥 $album ($year) [$albumtype]%if{disctotal > 1, ($disctotal discs)} ($albumtype)%if{$label,   󰴓 %if{catalognum,$catalognum   }$label}
+   $albumartist  󰀥 $album ($year) [$albumtype]%if{disctotal > 1, ($disctotal discs)} [$albumtype]%if{$label, (󰴓 $label%if{catalognum,  $catalognum}})
 
 rewrite:
   artist Muzzy: MUZZ
