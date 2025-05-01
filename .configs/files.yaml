@@ -20,15 +20,19 @@ item_fields:
     return " [" + result + "]" if len(result) > 0 else ""
   smart_disc_and_track_numbers: |
     result = ""
-    if albumtype.capitalize() != "Single":
+    if albumtype.lower().strip() not in ["single", "remix"]:
+      if disctotal > 1:
+        result += str(disc).zfill(len(str(disctotal))) if disctotal >= 10 else str(disc)
+      if disctotal > 1 and tracktotal > 1:
+        result += "-"
       if tracktotal > 1:
         result += str(track).zfill(len(str(tracktotal))) if tracktotal >= 10 else str(track)
-      if albumtype.capitalize() != "Remix" and albumtype.upper() != "EP":
-        if disctotal > 1 and tracktotal > 1:
-          result = "-" + result
-        if disctotal > 1:
-          result = str(disc).zfill(len(str(disctotal))) if disctotal >= 10 else str(disc) + result
     return result + (" " if len(result) > 0 else "")
+  smart_track_artists_for_path: |
+    if albumtype.lower().strip() in ["single", "remix"]:
+      return ""
+    else:
+      return artist + " - "
 
 import:
   write: true
@@ -44,6 +48,7 @@ import:
 paths:
   default: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
   singleton: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$title
+  albumtype:Single: Musique/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
   albumtype:DJ-mix: Mixes/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
   albumtype:Soundtrack: Bandes sonores/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$title
-  comp: Compilations/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$artist - $title
+  comp: Compilations/%the{$first_albumartist}/$album%aunique{} ($year)$smart_label_and_catalog_for_path/$smart_disc_and_track_numbers$smart_track_artists_for_path$title # Only add artists for compilations that are not singles or remixes. Basically useless to have them in Remix albums.
