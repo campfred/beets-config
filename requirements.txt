@@ -1,31 +1,37 @@
 ##
 # Main app
 beets>=2.0.0
+beets[autobpm]
 
 ##
+# Cover art embedding
 # Plugin : EmbedArt
 # Source : https://beets.readthedocs.io/en/stable/plugins/embedart.html
-# Cover art embedding
 pillow
 
 ##
-# Plugin : web
 # Web UI
+# Plugin : web
 flask
 
-##
-# Plugin : chroma
-# Sonic fingerprinting
-pyacoustid
+# ##
+# # Sonic fingerprinting
+# # Plugin : chroma
+# pyacoustid
 
 # ##
+# # BPM analysis
 # # Plugin : bpmanalyser
 # # Source : https://github.com/adamjakab/BeetsPluginBpmAnalyser
-# # BPM analysis
 # beets-bpmanalyser
 
 ##
+# Beatport source
 # Plugin : beatport4
 # Source : https://github.com/Samik081/beets-beatport4
-# Beatport source
 beets-beatport4
+
+##
+# Tidal backup app
+tidal-dl-ng
+tidal-dl-ng[gui]
