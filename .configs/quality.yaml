@@ -30,9 +30,11 @@ lastgenre:
   count: 3
   source: track
 
-bpmanalyser:
+autobpm:
   auto: true
-  write: true
+  overwrite: true
+  beat_track_kwargs:
+    start_bpm: 98
 
 embedart:
   maxwidth: 1280
