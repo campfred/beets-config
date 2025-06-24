@@ -10,13 +10,21 @@ per_disc_numbering: true
 
 format_item: |
    $path
-   $artist  $title ( $genre%if{bpm > 0, 󰟚 $bpm bpm}) [ $format]
-   $albumartist  󰀥 $album ($year) [$albumtype]%if{$label, (󰴓 $label%if{catalognum,  $catalognum}})
+   $artist   󰽰 $title (  $genre%if{bpm > 0, 󰟚 $bpm bpm} ) [  $format ]
+   $albumartist   󰀥 $album ($year) [$albumtype]%if{$label, ( 󰴓 $label%if{catalognum,   $catalognum}} )
 
 format_album: |
-   $albumartist  󰀥 $album ($year) [$albumtype]%if{disctotal > 1, ($disctotal discs)} [$albumtype]%if{$label, (󰴓 $label%if{catalognum,  $catalognum}})
+   $albumartist   󰀥 $album ($year) [$albumtype]%if{disctotal > 1, ($disctotal discs)} [$albumtype]%if{$label, ( 󰴓 $label%if{catalognum,   $catalognum}} )
 
 rewrite:
-  artist Muzzy: MUZZ
-  artist FISHER \(OZ\): FISHER
-  artist MEDUZA: MEDVZA
+  artist ^Muzzy$: MUZZ
+  albumartist ^Muzzy$: MUZZ
+  title ^Muzzy$: MUZZ
+  artist ^Muzz$: MUZZ
+  albumartist ^Muzz$: MUZZ
+  title ^Muzz$: MUZZ
+  artist ^FISHER \(OZ\)$: FISHER
+  albumartist ^FISHER \(OZ\)$: FISHER
+  artist ^1991$: NINETEEN91
+  albumartist ^1991$: NINETEEN91
+  title ^1991$: NINETEEN91
