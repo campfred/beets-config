@@ -1,3 +1,11 @@
+##
+# In case of moving all the data.
+# https://beets.readthedocs.io/en/latest/faq.html#id12
+# https://discourse.beets.io/t/moving-my-music-files-to-a-different-drive/2248/6
+##
+library: Beets.db
+directory: ../Beets
+
 plugins:
   - info
   - the
