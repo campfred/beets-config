@@ -4,28 +4,12 @@ ui:
     match_header: 4
     match_details: 4
     match_tracklist: 8
-    layout: newline
+    layout: column
 
 per_disc_numbering: true
 
-format_item: |
-   $path
-  |
-  |  $artist   󰽰 $title
-  |  $genre%if{bpm > 0,   󰟚 $bpm bpm}
-  |  $format
-  |
-  |  $albumartist   󰀥 $album ($year) [$albumtype]
-  | %if{$label,󰴓 $label%if{$catalognum,     $catalognum}}
-  |
-  󰃰 $added
-
-format_album: |
-   $path
-  󰀥 $album ($year) [$albumtype]%if{disctotal > 1, ($disctotal discs)} [$albumtype]
-   $albumartist
-  %if{$label,󰴓 $label%if{$catalognum,    $catalognum}}
-  󰃰 $added
+format_item:  $albumartist   󰀥 $album ($year) |  $artist   󰽰 $title %if{$label,[󰴓 $label%if{$catalognum,    $catalognum}]}
+format_album:  $albumartist   󰀥 $album ($year) %if{$label,[󰴓 $label%if{$catalognum,    $catalognum}]}
 
 rewrite:
   artist ^Muzzy$: MUZZ
