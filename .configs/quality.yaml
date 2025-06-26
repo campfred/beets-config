@@ -34,7 +34,7 @@ autobpm:
   auto: true
   overwrite: true
   beat_track_kwargs:
-    start_bpm: 98
+    start_bpm: 128
 
 embedart:
   maxwidth: 1280
