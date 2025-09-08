@@ -1,6 +1,6 @@
 ##
 # Main app
-beets>=2.0.0
+beets~=2.0
 beets[autobpm]
 
 ##
