@@ -45,7 +45,8 @@ Here's how to get setup my Beets configuration.
    2. Python
 
       ```shell
-      python -m venv .venv --upgrade-deps
+      # Launcher : py -3.12 -m venv .venv --upgrade-deps
+      # Direct : python3 -m venv .venv --upgrade-deps
       # Activate virtual environment
       # Windows : & .venv/Scripts/Activate.ps1
       # Linux : source .venv/bin/activate
