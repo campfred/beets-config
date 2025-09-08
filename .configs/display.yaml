@@ -4,7 +4,7 @@ ui:
     match_header: 4
     match_details: 4
     match_tracklist: 8
-    layout: column
+    # layout: column
 
 per_disc_numbering: true
 
