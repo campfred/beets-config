@@ -22,14 +22,13 @@ plugins:
   - replaygain
   - zero
   - autobpm
-  - beatport
-  # - beatport4
+  # - beatport # TODO Check back later once it's updated
+  # - beatport4 # TODO Check back later once it's updated
   - spotify
   - deezer
   - discogs
   - embedart
   - fetchart
-  # - subsonicupdate
 
 include:
   - .configs/files.yaml
