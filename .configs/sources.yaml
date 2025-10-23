@@ -1,14 +1,23 @@
 spotify:
-  source_weight: 0.4
-  show_failures: false
+  # source_weight: 0.4
+  data_source_mismatch_penalty: 0.6
+  # show_failures: false
 
-beatport4:
-  source_weight: 0.8
-  art: true
-  art_overwrite: false
+deezer:
+  # source_weight: 0.4
+  data_source_mismatch_penalty: 0.6
+
+beatport:
+  # source_weight: 0.8
+  data_source_mismatch_penalty: 0.2
+
+discogs:
+  # source_weight: 0.5
+  data_source_mismatch_penalty: 0.5
 
 musicbrainz:
-  source_weight: 0.2
+  # source_weight: 0.2
+  data_source_mismatch_penalty: 0.8
   extra_tags: [catalognum, label, year]
   external_ids:
     discogs: true

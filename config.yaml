@@ -22,8 +22,11 @@ plugins:
   - replaygain
   - zero
   - autobpm
-  - beatport4
+  - beatport
+  # - beatport4
   - spotify
+  - deezer
+  - discogs
   - embedart
   - fetchart
   # - subsonicupdate
@@ -34,4 +37,3 @@ include:
   - .configs/quality.yaml
   - .configs/sources.yaml
   - .configs/display.yaml
-  # - .configs/services.yaml
