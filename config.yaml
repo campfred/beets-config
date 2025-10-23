@@ -20,6 +20,7 @@ plugins:
   # - chroma # pyacoustid
   - convert
   - replaygain
+  - zero
   - autobpm
   - beatport4
   - spotify

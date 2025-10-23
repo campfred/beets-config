@@ -26,6 +26,12 @@ importadded:
   preserve_mtimes: true
   preserve_write_mtimes: true
 
+zero:
+  auto: true
+  fields: month day comments
+  omit_single_disc: true
+  update_database: true
+
 lastgenre:
   count: 3
   source: track
