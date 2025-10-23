@@ -178,3 +178,11 @@ These are soo useful when building your library. I recommend you check them out.
 * [Ben Dodson's Apple Music Artwork Finder](https://bendodson.com/projects/apple-music-artwork-finder/)
 * [Ben Dodson's iTunes Artwork Finder](https://bendodson.com/projects/itunes-artwork-finder/index.html)
 * [Tunebat Song Key & BPM Finder](https://tunebat.com/Analyzer)
+
+## Useful extra tid bits ℹ️
+
+Here's a Regular Expression for finding all the `(feat. [...])`
+
+```regex
+\s\(?feat\. (\w[éèà]*\s?[.,&]?\s?)+\)?
+```
