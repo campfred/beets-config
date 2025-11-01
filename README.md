@@ -52,10 +52,9 @@ Here's how to get setup my Beets configuration.
       # Linux : source .venv/bin/activate
       pip install --requirement requirements.txt
       ```
-  
-> [!success]
-> ***Voilà!***
-> Now, you can use Beets as always. 🎉
+
+***Voilà!***
+Now, you can use Beets as always. 🎉
 
 ## Contributing 🏗️
 
